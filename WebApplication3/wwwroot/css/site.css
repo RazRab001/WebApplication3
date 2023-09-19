@@ -1,0 +1,23 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* Стиль для сообщений об ошибках */
+.field-validation-error {
+    color: red; /* Красный цвет текста */
+    font-size: 14px; /* Изменение размера шрифта */
+}

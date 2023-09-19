@@ -1,0 +1,56 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Checkout";
+}
+<title>@ViewData["Title"]</title>
+<h1>@ViewData["Title"]</h1>
+
+@if (Model.Output != null){
+    <h2>Your data:</h2>
+    <p><strong><label asp-for="Input.FirstName"></label>:</strong> @Model.Output.FirstName</p>
+    <p><strong><label asp-for="Input.LastName"></label>:</strong> @Model.Output.LastName</p>
+    <p><strong><label asp-for="Input.Mail"></label>:</strong> @Model.Output.Mail</p>
+    <p><strong><label asp-for="Input.PhoneNumber"></label>:</strong> @Model.Output.PhoneNumber</p>
+    <!-- Кнопка "Согласиться" -->
+    <form asp-page="Welcome">
+        <button type="submit" class="btn btn-primary">I Agree</button>
+    </form>
+    <br />
+    <!-- Кнопка "Отмена" -->
+    <form asp-page="Index">
+        <button type="submit" class="btn btn-danger">Back to registration</button>
+    </form>
+}
+else{
+    <form asp-page="Index">
+        
+        <div class="form-group">
+            <label asp-for="Input.FirstName"></label>
+            <input class="form-control" asp-for="Input.FirstName" />
+            <span asp-validation-for="Input.FirstName"></span>
+        </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="Input.LastName"></label>
+            <input class="form-control" asp-for="Input.LastName" />
+            <span asp-validation-for="Input.LastName"></span>
+        </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="Input.Mail"></label>
+            <input class="form-control" asp-for="Input.Mail" />
+            <span asp-validation-for="Input.Mail"></span>
+        </div>
+        <br />
+        <div class="form-group">
+            <label asp-for="Input.PhoneNumber"></label>
+            <input class="form-control" asp-for="Input.PhoneNumber" />
+            <span asp-validation-for="Input.PhoneNumber"></span>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+}
+
